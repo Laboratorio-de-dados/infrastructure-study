@@ -64,11 +64,40 @@ resource "aws_route_table_association" "public-association" {
   route_table_id = aws_route_table.rt-publica.id
 }
 
+resource "aws_security_group" "WEB-API" {
+  name = "web"
+  description = "web api"
+  vpc_id = aws_vpc.josue.id
+
+  tags = {
+    name = "webapi"
+  }
+}
+
+resource "aws_vpc_security_group_ingress_rule" "ingress" {
+  security_group_id = aws_security_group.WEB-API.id
+  cidr_ipv4 = aws_vpc.josue.cidr_block
+
+  from_port = 443
+  ip_protocol = "tcp"
+  to_port = 443
+}
+
+resource "aws_vpc_security_group_egress_rule" "egress" {
+  security_group_id = aws_security_group.WEB-API.id
+  cidr_ipv4 = aws_vpc.josue.cidr_block
+
+  from_port = 443
+  ip_protocol = "tcp"
+  to_port = 443
+}
+
+
+
 resource "aws_instance" "WEB-API" {
-  ami = "ami-0f3f13f145e66a0a3"
+  ami           = "ami-0f3f13f145e66a0a3"
   instance_type = "t3.micro"
 
-  vpc_security_group_ids = ""
-  subnet_id = aws_subnet.publica.id
+  subnet_id              = aws_subnet.publica.id
 }
 
