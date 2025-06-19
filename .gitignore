@@ -1,0 +1,38 @@
+# Arquivos de estado do Terraform
+*.tfstate
+*.tfstate.*
+
+# Arquivos de crash log
+crash.log
+
+# Diretório de cache do Terraform
+.terraform/
+
+# Diretório local do Terraform plan
+*.tfplan
+
+# Arquivos de override (usados localmente)
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Variáveis sensíveis (caso existam)
+terraform.tfvars
+terraform.tfvars.json
+
+# Lock file de providências locais
+.terraform.lock.hcl
+
+# Arquivos de log temporários ou pessoais
+*.log
+
+# Arquivos de saída do plano
+*.out
+
+# Evitar upload de backups criados por alguns editores
+*~
+
+# macOS / Linux / Windows arquivos temporários
+.DS_Store
+Thumbs.db
