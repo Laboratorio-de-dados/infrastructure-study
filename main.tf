@@ -97,7 +97,7 @@ resource "aws_vpc_security_group_egress_rule" "egress" {
 resource "aws_instance" "WEB-API" {
   ami           = "ami-0f3f13f145e66a0a3"
   instance_type = "t3.micro"
-  security_groups = [aws_security_group.WEB-API]
+  security_groups = [ aws_security_group.WEB-API.id ]
 
   subnet_id              = aws_subnet.publica.id
 }
