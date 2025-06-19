@@ -64,3 +64,11 @@ resource "aws_route_table_association" "public-association" {
   route_table_id = aws_route_table.rt-publica.id
 }
 
+resource "aws_instance" "WEB-API" {
+  ami = "ami-0f3f13f145e66a0a3"
+  instance_type = "t3.micro"
+
+  vpc_security_group_ids = ""
+  subnet_id = aws_subnet.publica.id
+}
+
