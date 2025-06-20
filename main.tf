@@ -7,6 +7,11 @@ terraform {
   }
 }
 
+provider "aws" {
+  region     = "VARIAVEL"
+  access_key = "VARIAVEL"
+  secret_key = "VARIAVEL"
+}
 
 resource "aws_vpc" "josue" {
   cidr_block       = "10.0.0.0/25"
