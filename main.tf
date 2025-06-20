@@ -8,9 +8,16 @@ terraform {
 }
 
 provider "aws" {
-  region     = "VARIAVEL"  #coloque aqui as informações
-  access_key = "VARIAVEL"
-  secret_key = "VARIAVEL"
+  shared_config_files      = ["/home/moraes/.aws/config"]
+  shared_credentials_files = ["/home/moraes/.aws/credentials"]
+  profile                  = "default"
+}
+
+provider "aws" {
+  region     = "us-west-2"
+  access_key = "my-access-key"
+  secret_key = "my-secret-key"
+  token = "my-token"
 }
 
 resource "aws_vpc" "josue" {
