@@ -93,6 +93,8 @@ resource "aws_vpc_security_group_egress_rule" "egress" {
 }
 
 
+
+
 resource "aws_iam_instance_profile" "role-ec2" {
   name = "role-existing-profile"
   role = data.aws_iam_role.role-ssm.name
