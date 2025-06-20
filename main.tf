@@ -93,6 +93,11 @@ resource "aws_vpc_security_group_egress_rule" "egress" {
 }
 
 
+resource "aws_iam_instance_profile" "role-ec2" {
+  name = "role-existing-profile"
+  role = data.aws_iam_role.role-ssm.name
+}
+
 
 resource "aws_instance" "WEB-API" {
   ami           = "ami-0f3f13f145e66a0a3"
@@ -100,5 +105,6 @@ resource "aws_instance" "WEB-API" {
   security_groups = [ aws_security_group.WEB-API.id ]
 
   subnet_id              = aws_subnet.publica.id
+  iam_instance_profile = aws_iam_instance_profile.role-ec2.name
 }
 
