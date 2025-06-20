@@ -8,7 +8,7 @@ terraform {
 }
 
 provider "aws" {
-  region     = "VARIAVEL"
+  region     = "VARIAVEL"  #coloque aqui as informações
   access_key = "VARIAVEL"
   secret_key = "VARIAVEL"
 }
