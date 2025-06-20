@@ -78,8 +78,6 @@ resource "aws_vpc_security_group_egress_rule" "egress" {
 }
 
 
-
-
 resource "aws_iam_instance_profile" "role-ec2" {
   name = "role-existing-profile"
   role = data.aws_iam_role.role-ssm.name
@@ -95,3 +93,9 @@ resource "aws_instance" "WEB-API" {
   iam_instance_profile = aws_iam_instance_profile.role-ec2.name
 }
 
+output "INSTANCE-ID" {
+  value = aws_instance.WEB-API.id
+}
+output "INSTANCE-NAME" {
+  value = aws_instance.WEB-API.key_name
+}
