@@ -9,8 +9,8 @@ terraform {
 
 provider "aws" {
   region     = "VARIAVEL"  #coloque aqui as informações
-  access_key = "VARIAVEL"
-  secret_key = "VARIAVEL"
+  access_key = "VARIAVEL"  #coloque aqui outro teste
+  secret_key = "VARIAVEL"  #coloque aqui outro teste
 }
 
 resource "aws_vpc" "josue" {
