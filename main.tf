@@ -8,12 +8,8 @@ terraform {
 }
 
 provider "aws" {
-  region     = "VARIAVEL"  #coloque aqui as informações
-  access_key = "VARIAVEL"  #coloque aqui outro teste
-  secret_key = "VARIAVEL"  #coloque aqui outro teste
+  region     = "us-east-1"
 }
-
-#kivi
 
 resource "aws_vpc" "josue" {
   cidr_block       = "10.0.0.0/25"
