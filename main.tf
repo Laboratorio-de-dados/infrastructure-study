@@ -13,6 +13,8 @@ provider "aws" {
   secret_key = "VARIAVEL"  #coloque aqui outro teste
 }
 
+#kivi
+
 resource "aws_vpc" "josue" {
   cidr_block       = "10.0.0.0/25"
   instance_tenancy = "default"
