@@ -118,7 +118,6 @@ resource "aws_iam_instance_profile" "role-ec2" {
   role = data.aws_iam_role.role-ssm.name
 }
 
-
 resource "aws_instance" "WEB-API" {
   ami             = "ami-0f3f13f145e66a0a3"
   instance_type   = "t3.micro"
